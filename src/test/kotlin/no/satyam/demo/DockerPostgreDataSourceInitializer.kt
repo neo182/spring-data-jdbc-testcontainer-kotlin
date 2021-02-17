@@ -1,10 +1,12 @@
 package no.satyam.demo
 
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.test.context.support.TestPropertySourceUtils
 import org.testcontainers.containers.PostgreSQLContainer
 
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class DockerPostgreDataSourceInitializer : ApplicationContextInitializer<ConfigurableApplicationContext?> {
     private val postgreSQLContainer: TestPostgreSQLContainer = TestPostgreSQLContainer("postgres:13")
 
