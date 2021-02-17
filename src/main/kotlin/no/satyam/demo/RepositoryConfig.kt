@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories
 import org.springframework.data.relational.core.mapping.event.BeforeSaveEvent
 import java.util.concurrent.atomic.AtomicLong
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 @Configuration
 @EnableJdbcRepositories(basePackages = ["no.satyam.demo"])
@@ -14,7 +13,7 @@ class RepositoryConfig {
     val customerId: AtomicLong = AtomicLong(0)
 
     @Bean
-    fun isSetting(): ApplicationListener<BeforeSaveEvent<JvmType.Object>> {
+    fun isSetting(): ApplicationListener<BeforeSaveEvent<Object>> {
         return ApplicationListener { event ->
             val entity: BasicEntity = event.entity as BasicEntity
 
