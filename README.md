@@ -1,7 +1,7 @@
 # Getting Started
 
 ### Spring Data JDBC with TestContainers (Kotlin version)
-To configurate testcontainer with Spring Data JDBC can be a cumbersome thing for many developers.
+To configure testcontainer for testing Spring Data JDBC Repository can be a cumbersome thing for many developers.
 This is a simple reference application to save that frustration.
 This is actually rewrite of [Spring Data JDBC with TestContainers](https://github.com/neo182/spring-data-jdbc-testcontainer/) 
 
